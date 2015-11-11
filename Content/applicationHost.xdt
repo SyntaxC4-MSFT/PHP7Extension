@@ -6,5 +6,12 @@
         <add name="PATH" value="D:\home\SiteExtensions\PHP7Extension\Commands\PHP7x86\;%PATH%" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
       </environmentVariables>
     </runtime>
+    <fastCgi>
+      <application fullPath="D:\home\SiteExtensions\PHP7Extension\Commands\PHP7x86\php-cgi.exe" xdt:Locator="Match(fullPath)">
+        <environmentVariables>
+          <environmentVariable name="PHPRC" xdt:Locator="Match(name)" value="D:\home\SiteExtensions\PHP7Extension\Commands\PHP7x86\php.ini" xdt:Transform="SetAttributes(value)" />
+        </environmentVariables>
+      </application>
+    </fastCgi>
   </system.webServer> 
 </configuration> 
