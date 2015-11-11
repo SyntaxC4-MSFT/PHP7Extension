@@ -9,8 +9,11 @@ rm PHP7x86.zip
 ## Move ApplicationHost.xdt
 
 cd ..
-cp applicationHost.xdt.bak d:\home\site\applicationHost.xdt
+cp applicationHost.xdt d:\home\site\applicationHost.xdt
+mv applicationHost.xdt applicationHost.xdt.bak
 
 ## Create PHP.ini
+
+cd PHP7x86
 
 sed -e 's/;fastcgi.impersonate = 1/fastcgi.impersonate = 1/g' -e 's/;fastcgi.logging = 0/fastcgi.logging = 0/g' php.ini-production > php.ini
