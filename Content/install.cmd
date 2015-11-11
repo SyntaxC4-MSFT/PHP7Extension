@@ -13,7 +13,4 @@ cp applicationHost.xdt.bak d:\home\site\applicationHost.xdt
 
 ## Create PHP.ini
 
-cp php.ini-production php.ini
-
-## Enable Impersonate and Disable FastCGI Logging
-
+sed -e 's/;fastcgi.impersonate = 1/fastcgi.impersonate = 1/g' -e 's/;fastcgi.logging = 0/fastcgi.logging = 0/g' php.ini-production > php.ini
