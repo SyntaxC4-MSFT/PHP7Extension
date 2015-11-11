@@ -10,3 +10,10 @@ rm PHP7x86.zip
 
 cd ..
 cp applicationHost.xdt.bak d:\home\site\applicationHost.xdt
+
+## Create PHP.ini
+
+cp php.ini-production php.ini
+
+## Enable Impersonate and Disable FastCGI Logging
+
