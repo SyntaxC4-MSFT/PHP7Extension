@@ -3,14 +3,23 @@
   <system.webServer> 
     <runtime xdt:Transform="InsertIfMissing">
       <environmentVariables xdt:Transform="InsertIfMissing">
-        <add name="PATH" value="D:\home\SiteExtensions\PHP7Extension\Commands\PHP7x86\;%PATH%" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
+        <add name="PATH" value="D:\home\SiteExtensions\PHP7Extension\Commands\PHP7x86;%PATH%" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
       </environmentVariables>
     </runtime>
-    <handlers>
-      <remove name="PHP54_via_FastCGI" />
-      <remove name="PHP55_via_FastCGI" />
-      <remove name="PHP56_via_FastCGI" />
-      <add name="PHP7_via_FastCGI" path="*.php" verb="GET,PUT,POST,DELETE,HEAD,OPTIONS" modules="FastCgiModule" scriptProcessor="D:\home\SiteExtensions\PHP7Extension\Commands\PHP7x86\php-cgi.exe" resourceType="Either" requireAccess="Script" />
-    </handlers>
-  </system.webServer> 
-</configuration> 
+    <fastCgi>
+      <application fullPath="D:\home\SiteExtensions\PHP7Extension\Commands\PHP7x86\php-cgi.exe" activityTimeout="600" requestTimeout="600" instanceMaxRequests="10000" maxInstances="4" xdt:Locator="Match(fullPath)" xdt:Transform="InsertIfMissing">
+        <environmentVariables>
+          <environmentVariable name="PHP_FCGI_MAX_REQUESTS" value="10000" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
+          <environmentVariable name="PHPRC" xdt:Locator="Match(name)" value="D:\home\SiteExtensions\PHP7Extension\Commands\PHP7x86\php.ini" xdt:Transform="InsertIfMissing" />
+        </environmentVariables>
+      </application>
+    </fastCgi>
+  </system.webServer>
+  <location path="" overrideMode="Allow">
+    <system.webServer>
+      <handlers accessPolicy="Read, Script">
+        <add name="PHP7_via_FastCGI" path="*.php" verb="GET,HEAD,POST" modules="FastCgiModule" scriptProcessor="D:\home\SiteExtensions\PHP7Extension\Commands\PHP7x86\php-cgi.exe" resourceType="Either" xdt:Locator="Condition(@name='PHP54_via_FastCGI' or @name='PHP55_via_FastCGI' or @name='PHP56_via_FastCGI')" xdt:Transform="Replace" />
+      </handlers>
+    </system.webServer>
+  </location>
+</configuration>
