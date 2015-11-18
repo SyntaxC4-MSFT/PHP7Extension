@@ -12,6 +12,10 @@ cd PHP7x86
 
 sed -e 's/;fastcgi.impersonate = 1/fastcgi.impersonate = 1/g' -e 's/;fastcgi.logging = 0/fastcgi.logging = 0/g' php.ini-production > php.ini
 
+:: WinCache PHP7 Binary Drop
+
+:: WinCache PHP7 php.ini updates
+
 :: Move ApplicationHost.xdt
 
 cd ..\..
