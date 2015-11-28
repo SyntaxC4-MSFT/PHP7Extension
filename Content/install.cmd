@@ -1,12 +1,12 @@
 :: Download PHP7 x86 Runtime
 
-IF NOT EXISTS Commands (
+IF NOT EXIST Commands (
   mkdir Commands
 )
 
 cd Commands
 
-IF EXISTS PHP7x86 (
+IF EXIST PHP7x86 (
  rm -rf PHP7x86
 )
 
@@ -23,7 +23,7 @@ echo extension_dir=ext >> php.ini
 
 cd ext
 
-IF NOT EXISTS php_wincache.dll (
+IF NOT EXIST php_wincache.dll (
   curl -L -O https://github.com/SyntaxC4-MSFT/PHP7Extension/releases/download/v0.7.0/php_wincache.dll
 )
   
