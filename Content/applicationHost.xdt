@@ -3,14 +3,14 @@
   <system.webServer> 
     <runtime xdt:Transform="InsertIfMissing">
       <environmentVariables xdt:Transform="InsertIfMissing">
-        <add name="PATH" value="D:\home\SiteExtensions\PHP7Extension\Commands\PHP7x64;%PATH%" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
+        <add name="PATH" value="D:\home\SiteExtensions\PHP7Extension64\Commands\PHP7x64;%PATH%" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
       </environmentVariables>
     </runtime>
     <fastCgi>
-      <application fullPath="D:\home\SiteExtensions\PHP7Extension\Commands\PHP7x64\php-cgi.exe" activityTimeout="600" requestTimeout="600" instanceMaxRequests="10000" maxInstances="4" xdt:Locator="Match(fullPath)" xdt:Transform="InsertIfMissing">
+      <application fullPath="D:\home\SiteExtensions\PHP7Extension64\Commands\PHP7x64\php-cgi.exe" activityTimeout="600" requestTimeout="600" instanceMaxRequests="10000" maxInstances="4" xdt:Locator="Match(fullPath)" xdt:Transform="InsertIfMissing">
         <environmentVariables>
           <environmentVariable name="PHP_FCGI_MAX_REQUESTS" value="10000" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
-          <environmentVariable name="PHPRC" xdt:Locator="Match(name)" value="D:\home\SiteExtensions\PHP7Extension\Commands\PHP7x64\php.ini" xdt:Transform="InsertIfMissing" />
+          <environmentVariable name="PHPRC" xdt:Locator="Match(name)" value="D:\home\SiteExtensions\PHP7Extension64\Commands\PHP7x64\php.ini" xdt:Transform="InsertIfMissing" />
         </environmentVariables>
       </application>
     </fastCgi>
@@ -18,7 +18,7 @@
   <location path="" overrideMode="Allow">
     <system.webServer>
       <handlers accessPolicy="Read, Script">
-        <add name="PHP7_via_FastCGI" path="*.php" verb="GET,HEAD,POST" modules="FastCgiModule" scriptProcessor="D:\home\SiteExtensions\PHP7Extension\Commands\PHP7x64\php-cgi.exe" resourceType="Either" xdt:Locator="Condition(@name='PHP54_via_FastCGI' or @name='PHP55_via_FastCGI' or @name='PHP56_via_FastCGI')" xdt:Transform="Replace" />
+        <add name="PHP7_via_FastCGI" path="*.php" verb="GET,HEAD,POST" modules="FastCgiModule" scriptProcessor="D:\home\SiteExtensions\PHP7Extension64\Commands\PHP7x64\php-cgi.exe" resourceType="Either" xdt:Locator="Condition(@name='PHP54_via_FastCGI' or @name='PHP55_via_FastCGI' or @name='PHP56_via_FastCGI')" xdt:Transform="Replace" />
       </handlers>
     </system.webServer>
   </location>
