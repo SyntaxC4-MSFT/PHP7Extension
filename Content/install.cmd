@@ -32,6 +32,33 @@ IF NOT EXIST php_wincache.dll (
 cd ..
 echo extension=php_wincache.dll >> php.ini
 
+:: Other Extensions 
+echo extension=php_mysqli.dll >> php.ini
+echo extension=php_mbstring.dll >> php.ini
+echo extension=php_gd2.dll >> php.ini
+echo extension=php_gettext.dll >> php.ini
+echo extension=php_curl.dll >> php.ini
+echo extension=php_exif.dll >> php.ini
+echo extension=php_xmlrpc.dll >> php.ini
+echo extension=php_openssl.dll >> php.ini
+echo extension=php_soap.dll >> php.ini
+echo extension=php_pdo_mysql.dll >> php.ini
+echo extension=php_pdo_sqlite.dll >> php.ini
+echo extension=php_imap.dll >> php.ini
+echo extension=php_tidy.dll >> php.ini
+echo extension=php_com_dotnet.dll >> php.ini
+echo extension=php_intl.dll >> php.ini
+echo extension=php_fileinfo.dll >> php.ini
+echo zend_extension=php_opcache.dll >> php.ini
+
+:: Other PHP.ini settings
+
+echo error_log=D:\home\LogFiles\php_errors.log >> php.ini
+echo upload_tmp_dir=D:\local\Temp >> php.ini
+echo session.save_path=D:\local\Temp >> php.ini
+echo wincache.filemapdir=D:\local\Temp >> php.ini
+echo short_open_tag=On
+
 :: Move ApplicationHost.xdt
 
 cd ..\..
