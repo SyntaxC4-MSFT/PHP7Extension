@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <package>
 	<metadata>
-		<id>PHP7Extension</id>
-		<title>PHP7 x86</title>
-		<version>0.0.9</version>
+		<id>PHP7Extension64</id>
+		<title>PHP7 x64</title>
+		<version>0.0.1</version>
 		<authors>Cory Fowler</authors>
 		<licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
-		<projectUrl>https://github.com/SyntaxC4-MSFT/PHP7Extension</projectUrl>
+		<projectUrl>https://github.com/SyntaxC4-MSFT/PHP7Extension/tree/x64</projectUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<description>Adds PHP7 Support to Azure Web App</description>
+		<description>Adds PHP7 x64 Support to Azure Web App</description>
 		<iconUrl>http://www.siteextensions.net/Content/Images/packageDefaultIcon.png</iconUrl>
 		<tags>php</tags>
 	</metadata>
