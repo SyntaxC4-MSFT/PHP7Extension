@@ -49,6 +49,8 @@ echo extension=php_tidy.dll >> php.ini
 echo extension=php_com_dotnet.dll >> php.ini
 echo extension=php_intl.dll >> php.ini
 echo extension=php_fileinfo.dll >> php.ini
+echo extension=php_pgsql.dll >> php.ini
+echo extension=php_pdo_pgsql.dll >> php.ini
 echo zend_extension=php_opcache.dll >> php.ini
 
 :: Other PHP.ini settings
