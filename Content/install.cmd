@@ -10,7 +10,7 @@ IF EXIST PHP7x86 (
  rm -rf PHP7x86
 )
 
-curl -L -o PHP7x86.zip http://windows.php.net/downloads/qa/php-7.0.0RC8-nts-Win32-VC14-x86.zip
+curl -L -o PHP7x86.zip http://windows.php.net/downloads/releases/php-7.0.0-nts-Win32-VC14-x86.zip
 d:\7zip\7za x PHP7x86.zip -oPHP7x86
 
 :: Create PHP.ini
@@ -49,6 +49,8 @@ echo extension=php_tidy.dll >> php.ini
 echo extension=php_com_dotnet.dll >> php.ini
 echo extension=php_intl.dll >> php.ini
 echo extension=php_fileinfo.dll >> php.ini
+echo extension=php_pgsql.dll >> php.ini
+echo extension=php_pdo_pgsql.dll >> php.ini
 echo zend_extension=php_opcache.dll >> php.ini
 
 :: Other PHP.ini settings
