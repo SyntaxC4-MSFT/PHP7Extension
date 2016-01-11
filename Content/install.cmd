@@ -24,7 +24,7 @@ echo extension_dir=ext >> php.ini
 cd ext
 
 IF NOT EXIST php_wincache.dll (
-  curl -L -O https://github.com/SyntaxC4-MSFT/PHP7Extension/releases/download/v0.7.0/php_wincache.dll
+  curl -L -O https://github.com/SyntaxC4-MSFT/PHP7Extension/releases/download/v0.1.1/php_wincache.dll
 )
   
 :: WinCache PHP7 php.ini updates
