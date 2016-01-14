@@ -50,16 +50,16 @@ echo zend_extension=php_opcache.dll >> php.ini
 
 :: Other PHP.ini settings
 
-echo error_log=D:\home\LogFiles\php_errors.log >> php.ini
-echo upload_tmp_dir=D:\local\Temp >> php.ini
-echo session.save_path=D:\local\Temp >> php.ini
-echo wincache.filemapdir=D:\local\Temp >> php.ini
+echo error_log=${HOME}\LogFiles\php_errors.log >> php.ini
+echo upload_tmp_dir=${TEMP} >> php.ini
+echo session.save_path=${TEMP} >> php.ini
+echo wincache.filemapdir=${TEMP} >> php.ini
 echo short_open_tag=On
 
 :: Move ApplicationHost.xdt
 
 cd ..\..
-cp applicationHost.xdt d:\home\site\applicationHost.xdt
+cp applicationHost.xdt %HOME%\site\applicationHost.xdt
 mv applicationHost.xdt applicationHost.xdt.bak
 
 :: Clean up
