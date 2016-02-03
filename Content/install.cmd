@@ -10,7 +10,7 @@ IF EXIST PHP7x64 (
  rm -rf PHP7x64
 )
 
-curl -L -o PHP7x64.zip http://windows.php.net/downloads/releases/php-7.0.2-nts-Win32-VC14-x64.zip
+curl -L -o PHP7x64.zip http://windows.php.net/downloads/releases/php-7.0.3-nts-Win32-VC14-x64.zip
 d:\7zip\7za x PHP7x64.zip -oPHP7x64
 
 :: Create PHP.ini
@@ -23,7 +23,7 @@ echo extension_dir=ext >> php.ini
 
 cd ext
 
-curl -L -O https://github.com/SyntaxC4-MSFT/PHP7Extension/releases/download/v0.1.3/php_wincache.dll
+curl -L -O https://github.com/SyntaxC4-MSFT/PHP7Extension/releases/download/0.1.9/php_wincache.dll
   
 :: WinCache PHP7 php.ini updates
 
