@@ -22,12 +22,16 @@ echo extension_dir=ext >> php.ini
 :: WinCache PHP7 Binary Drop
 
 cd ext
-curl -L -O https://github.com/SyntaxC4-MSFT/PHP7Extension/releases/download/v0.1.1/php_wincache.dll
+curl -L -O https://github.com/SyntaxC4-MSFT/PHP7Extension/releases/download/0.1.7/php_wincache.dll
+
+:: Including the SQL Server Technical Preview Drivers x86 only.
+curl -L -o php_sqlsrv.dll https://github.com/Azure/msphpsql/releases/download/v4.0.0/php_sqlsrv_7_nts.dll
   
 :: WinCache PHP7 php.ini updates
 
 cd ..
 echo extension=php_wincache.dll >> php.ini
+echo extension=php_sqlsrv.dll >> php.ini
 
 :: Other Extensions 
 echo extension=php_mysqli.dll >> php.ini
