@@ -25,7 +25,7 @@ cd ext
 curl -L -O https://github.com/SyntaxC4-MSFT/PHP7Extension/releases/download/0.1.7/php_wincache.dll
 
 :: Including the SQL Server Technical Preview Drivers x86 only.
-curl -L -o php_sqlsrv.dll https://github.com/Azure/msphpsql/releases/download/v4.0.0/php_sqlsrv_7_nts.dll
+curl -L -o php_sqlsrv.dll https://github.com/Azure/msphpsql/releases/download/v4.0.1/php_sqlsrv_7_nts.dll
   
 :: WinCache PHP7 php.ini updates
 
