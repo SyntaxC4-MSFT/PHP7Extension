@@ -10,7 +10,7 @@ IF EXIST PHP7x64 (
  rm -rf PHP7x64
 )
 
-curl -L -o PHP7x64.zip http://windows.php.net/downloads/releases/php-7.0.3-nts-Win32-VC14-x64.zip
+curl -L -o PHP7x64.zip http://windows.php.net/downloads/releases/php-7.0.4-nts-Win32-VC14-x64.zip
 d:\7zip\7za x PHP7x64.zip -oPHP7x64
 
 :: Create PHP.ini
