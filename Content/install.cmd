@@ -10,8 +10,22 @@ IF EXIST PHP7x64 (
  rm -rf PHP7x64
 )
 
+IF EXIST SQLSVR (
+    rm -rf SQLSVR
+)
+
+IF EXIST REDIS (
+    rm -rf REDIS
+)
+
 curl -L -o PHP7x64.zip http://windows.php.net/downloads/releases/php-7.0.4-nts-Win32-VC14-x64.zip
 d:\7zip\7za x PHP7x64.zip -oPHP7x64
+
+curl -L -o SQLSVR.zip https://github.com/Azure/msphpsql/releases/download/v4.0.2/x64.zip
+start /wait d:\7zip\7za.exe x SQLSVR.zip -oSQLSVR
+
+curl -L -o REDIS.zip http://windows.php.net/downloads/pecl/snaps/redis/20160319/php_redis-20160319-nts-vc14-x64.zip
+start /wait d:\7zip\7za.exe x REDIS.zip -oREDIS
 
 :: Create PHP.ini
 cd PHP7x64
@@ -25,10 +39,18 @@ cd ext
 
 curl -L -O https://github.com/SyntaxC4-MSFT/PHP7Extension/releases/download/0.1.9/php_wincache.dll
   
+:: Including the SQL Server Technical Preview Drivers x86 only.
+cp d:\home\SiteExtensions\PHP7Extension64\Commands\SQLSVR\x64\php_sqlsrv_7_nts.dll .\php_sqlsrv.dll
+
+:: Including the REDIS PHP 7 Driver Preview
+cp d:\home\SiteExtensions\PHP7Extension64\Commands\REDIS\php_redis.dll .\php_redis.dll  
+  
 :: WinCache PHP7 php.ini updates
 
 cd ..
 echo extension=php_wincache.dll >> php.ini
+echo extension=php_sqlsrv.dll >> php.ini
+echo extension=php_redis.dll >> php.ini
 
 :: Other Extensions 
 echo extension=php_mysqli.dll >> php.ini
