@@ -18,7 +18,7 @@ IF EXIST REDIS (
     rm -rf REDIS
 )
 
-curl -L -o PHP7x64.zip http://windows.php.net/downloads/releases/php-7.0.5-nts-Win32-VC14-x64.zip
+curl -L -o PHP7x64.zip http://windows.php.net/downloads/releases/php-7.0.6-nts-Win32-VC14-x64.zip
 d:\7zip\7za x PHP7x64.zip -oPHP7x64
 
 curl -L -o SQLSVR.zip https://github.com/Azure/msphpsql/releases/download/v4.0.2/x64.zip
