@@ -21,10 +21,13 @@ IF EXIST REDIS (
 curl -L -o PHP7x64.zip http://windows.php.net/downloads/releases/php-7.0.7-nts-Win32-VC14-x64.zip
 d:\7zip\7za x PHP7x64.zip -oPHP7x64
 
-curl -L -o SQLSVR.zip https://github.com/Azure/msphpsql/releases/download/v4.0.2/x64.zip
+curl -L -o SQLSVR.zip https://github.com/Azure/msphpsql/releases/download/v4.0-RC/php_sqlsrv_4.0.5_x64.zip
 start /wait d:\7zip\7za.exe x SQLSVR.zip -oSQLSVR
 
-curl -L -o REDIS.zip http://windows.php.net/downloads/pecl/snaps/redis/20160319/php_redis-20160319-nts-vc14-x64.zip
+curl -L -o SQLSVRPDO.zip https://github.com/Azure/msphpsql/releases/download/v4.0-RC/php_pdo_sqlsrv_4.0.5_x64.zip
+start /wait d:\7zip\7za.exe x SQLSVRPDO.zip -oSQLSVR
+
+curl -L -o REDIS.zip http://windows.php.net/downloads/pecl/releases/redis/3.0.0/php_redis-3.0.0-7.0-nts-vc14-x64.zip
 start /wait d:\7zip\7za.exe x REDIS.zip -oREDIS
 
 :: Create PHP.ini
@@ -40,7 +43,9 @@ cd ext
 curl -L -O https://github.com/SyntaxC4-MSFT/PHP7Extension/releases/download/0.1.9/php_wincache.dll
   
 :: Including the SQL Server Technical Preview Drivers x86 only.
-cp d:\home\SiteExtensions\PHP7Extension64\Commands\SQLSVR\x64\php_sqlsrv_7_nts.dll .\php_sqlsrv.dll
+cp d:\home\SiteExtensions\PHP7Extension64\Commands\SQLSVR\php_sqlsrv_4.0.5_x64\php_sqlsrv_7_nts.dll .\php_sqlsrv.dll
+
+cp d:\home\SiteExtensions\PHP7Extension64\Commands\SQLSVR\php_pdo_sqlsrv_4.0.5_x64\php_pdo_sqlsrv_7_nts.dll .\php_pdo_sqlsrv.dll
 
 :: Including the REDIS PHP 7 Driver Preview
 cp d:\home\SiteExtensions\PHP7Extension64\Commands\REDIS\php_redis.dll .\php_redis.dll  
@@ -50,6 +55,7 @@ cp d:\home\SiteExtensions\PHP7Extension64\Commands\REDIS\php_redis.dll .\php_red
 cd ..
 echo extension=php_wincache.dll >> php.ini
 echo extension=php_sqlsrv.dll >> php.ini
+echo extension=php_pdo_sqlsrv.dll >> php.ini
 echo extension=php_redis.dll >> php.ini
 
 :: Other Extensions 
